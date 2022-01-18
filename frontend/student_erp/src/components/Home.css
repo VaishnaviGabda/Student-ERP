@@ -1,11 +1,13 @@
-.Home > video{
-    position: fixed;
-    width: 100%;
-    z-index: "-1";
-    
+.home{
+    width: 85%;
 }
 
-
+.home > video{
+    position: fixed;
+    width: 100%;
+    /* z-index: "-1"; */
+    
+}
 
 .navbar{
  
@@ -34,18 +36,19 @@
 
 }
 .button2{
-    
+    display: flex;
+    justify-content: center;
     background-color: white;
     position: relative;
     color: black;
     font-size: 20px;
     padding: 0px 20px ;
     border-radius: 5px;
-    height: 59px;
+    height: 80px;
     margin-top: 40px;
     margin-left: 1500px;
-    width: 250px;
-    justify-items: center;
+    width: 320px;
+    /* justify-items: center; */
   
 
 }
@@ -57,16 +60,15 @@
 
 .login{
     margin-top: -1px;
-    
-
 }
 
 .enroll{
-    margin-top: -1px ;
-
+    margin-top: 8px;
     font-weight: 700px;
-    
-    
+}
+
+#arrow{
+    margin-top:14px;
 }
 
 .thought1{

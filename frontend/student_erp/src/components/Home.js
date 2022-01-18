@@ -3,14 +3,15 @@ import React from 'react'
 import video from './videos/video.mp4'
 import Button from '@material-ui/core/Button';
 import { FaArrowRight } from "react-icons/fa";
+import EnrollNow from './EnrollNow';
 
 
 function Home() {
     return (
-<div className='Home'>
+<div className='home'>
   
      
-      < video loop autoPlay muted >
+      <video loop autoPlay muted >
         <source
           src={video}
           type="video/mp4"
@@ -58,16 +59,13 @@ function Home() {
       </h1>
 
       <div className='button2'>
-    <Button 
-        href="#">
-      <h1 className='enroll'> Enroll Now   <FaArrowRight/>  </h1>
-      </Button>
+    <h1 className="enroll">
+      Enroll Now
+      <FaArrowRight id="arrow"/>
+      </h1>
       </div>
-        
-     
-      
-         
-     
+
+      <EnrollNow/>   
 </div> 
          
 
@@ -75,6 +73,4 @@ function Home() {
     )
 }
 
-
-
-export default Home
+export default Home;
