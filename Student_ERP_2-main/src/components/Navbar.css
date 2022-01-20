@@ -1,0 +1,20 @@
+#navbar{
+    background-color: black;
+}
+/* 
+.menus{
+    display: flex;
+} */
+
+#menus , #logo{
+    color: white;
+}
+
+#logo{
+    padding-left: 30px;
+}
+
+#sidebar{
+    background-color: white;
+}
+
