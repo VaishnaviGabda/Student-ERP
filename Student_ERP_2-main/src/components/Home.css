@@ -1,3 +1,15 @@
+@media screen and (max-width: 480px) {
+    .quotes > h1{
+        font-size: 28px !important;
+    }
+}
+
+
+html,body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 .home > img{
     width:100vw;
     height: 100vh;

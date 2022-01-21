@@ -1,3 +1,15 @@
+ @media screen and (max-width: 480px){
+
+    .input_fields > input{
+        width: 250px !important;
+    }
+    #enroll_btn{
+        margin-left: 16% !important;
+    }
+     
+ }
+ 
+ 
  .image {  
    position: relative; 
    width: 100vw;
@@ -55,6 +67,7 @@ h2 {
     cursor: pointer;
     background-color: white;
     margin-left: 30%;
+
 }
 
 #enroll_btn:hover{
