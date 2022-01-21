@@ -1,0 +1,32 @@
+.home > img{
+    width:100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.home > a{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 150px;
+    border-radius: 20px;
+    position: absolute;
+    top: 78%;
+    right: 20%;
+}
+
+.quotes{
+    position: absolute;
+    top: 40%;
+    right: 10%;
+}
+
+.quotes > h1{
+    color: white;
+    font-weight: 700;
+    font-size: 38px;
+}

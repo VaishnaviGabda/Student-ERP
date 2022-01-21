@@ -1,0 +1,24 @@
+#navbar{
+    background-color: black;
+}
+/* 
+.menus{
+    display: flex;
+} */
+
+#menus , #logo{
+    color: white;
+}
+
+#menus:hover{
+    color: rgb(0, 238, 255);
+}
+
+#logo{
+    padding-left: 30px;
+}
+
+#sidebar{
+    background-color: white;
+}
+
