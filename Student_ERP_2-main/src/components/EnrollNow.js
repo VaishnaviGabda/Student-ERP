@@ -58,12 +58,15 @@ else{
             document.getElementById("branch").style.display = "none"
         }
     }, [degree]);
-  return  <div class="enroll_now" id="enroll_now">
+  return  <>
+        <h1 id="join_us">JOIN US</h1>
+  
+  <div class="enroll_now" id="enroll_now">
 
       <img src={enroll_now} alt="" />
 
       <form class="input_fields">
-            <h1 id="heading">JOIN US</h1>
+            {/* <h1 id="heading">JOIN US</h1> */}
             <input placeholder="FULL NAME"  required onChange={e =>setfull_name(e.target.value)}/>
             <input placeholder="EMAIL ADDRESS"  required onChange={e =>setemail(e.target.value)}/>
             <input placeholder="PHONE NUMBER" required onChange={e =>setphone(e.target.value)}/>
@@ -73,10 +76,31 @@ else{
                 <option>BE</option>
             </datalist>
             <input placeholder="BRANCH" id="branch" onChange={e =>setbranch(e.target.value)}/>
+            <select name="courses" className='courses'>
+                <option value="C">
+                    C/CPP/DSA
+                </option>
+                <option value="java">
+                    Java Full Stack
+                </option>
+                <option value="python">
+                    Python Full Stack
+                </option>
+                <option value="C">
+                    Mean Stack
+                </option>
+                <option value="C">
+                    Mern Stack
+                </option>
+                <option value="C">
+                    Data Science
+                </option>
+            </select>
             <button id="enroll_btn"  onClick={submit_data} type='submit'>ENROLL NOW</button>
         </form>
 
 </div>
+</>
 }
 
 export default EnrollNow;
