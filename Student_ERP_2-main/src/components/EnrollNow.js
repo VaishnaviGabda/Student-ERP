@@ -12,7 +12,8 @@ function EnrollNow() {
     const [email, setemail] = useState("")
     const [phone , setphone] = useState("")
     const [degree , setdegree] = useState("")
-     const [branch , setbranch] = useState("")
+    const [branch , setbranch] = useState("")
+    const [course , setCourse] = useState("")
 
 
     const data = {
@@ -20,13 +21,15 @@ function EnrollNow() {
         "email":email,
         "phone":phone,
         "degree":degree,
-        "branch":branch
-
+        "branch":branch,
+        "course": course,
     }
 
 
     const submit_data = ()=>{
-     if(full_name!=="" && email!=="" && degree!=="" && phone!=="")
+    console.log(course)
+
+     if(full_name!=="" && email!=="" && degree!=="" && phone!=="" && course!=="")
 {
     axios.post("http://localhost:9000/enrollnow/",data)
     .then(() =>{
@@ -40,8 +43,9 @@ function EnrollNow() {
     setdegree("")
     setphone("")
     setbranch("")
+    setCourse("")
 
-   alert("Your successfully Enrolled !!!")
+   alert("You are successfully Enrolled !")
     
 }
 else{
@@ -76,23 +80,27 @@ else{
                 <option>BE</option>
             </datalist>
             <input placeholder="BRANCH" id="branch" onChange={e =>setbranch(e.target.value)}/>
-            <select name="courses" className='courses'>
-                <option value="C">
+            <select name="courses" className='courses' onChange={e =>setCourse(e.target.value)}>
+            {console.log(course)}
+                <option value="course">
+                    Select course
+                </option>
+                <option value="C/CPP/DSA">
                     C/CPP/DSA
                 </option>
-                <option value="java">
+                <option value="Java Full Stack">
                     Java Full Stack
                 </option>
-                <option value="python">
+                <option value="Python Full Stack">
                     Python Full Stack
                 </option>
-                <option value="C">
+                <option value="Mean Stack">
                     Mean Stack
                 </option>
-                <option value="C">
+                <option value="Mern Stack">
                     Mern Stack
                 </option>
-                <option value="C">
+                <option value="Data Science">
                     Data Science
                 </option>
             </select>

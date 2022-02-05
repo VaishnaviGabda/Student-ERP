@@ -1,6 +1,6 @@
  @media screen and (max-width: 480px){
 
-    .input_fields > input{
+    .input_fields > input , .courses{
         width: 250px !important;
     }
     #enroll_btn{
@@ -8,7 +8,6 @@
     }
      
  }
- 
  
  .image {  
    position: relative; 

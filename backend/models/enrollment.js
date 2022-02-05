@@ -15,6 +15,9 @@ const EnrollmentData = mongoose.Schema({
    },
    "branch":{
        type:String
+   },
+   "course":{
+       type:String
    }
    
 })
