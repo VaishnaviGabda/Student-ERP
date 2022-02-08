@@ -4,9 +4,15 @@ const Courses = mongoose.Schema({
    "course_name":{
        type:String
    },
-   "seats":{
+   "total_seats":{
        type:String
-   }
+   },
+   "available_seats":{
+      type:String,
+   },
+   "students":{
+       type:[]
+  }
    
 })
 

@@ -18,8 +18,8 @@ router.post('/enrollnow' ,(req,res,next)=>{
 
 })
 
-router.get('/get_data',(req,res,next) =>{
-    Enroll.find()
+router.get('/get_requests',(req,res,next) =>{
+    Enroll.find({"status": false})
     .then(result =>{
         res.send(result)
     })
