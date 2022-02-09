@@ -1,0 +1,10 @@
+.header{
+    background-color: black;
+}
+
+#header__text{
+    color: white;
+    font-size: 26px;
+    padding: 10px;
+    place-items: center;
+}

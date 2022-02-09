@@ -1,0 +1,39 @@
+.sidebar > img{
+    height: 100vh;
+    position: absolute;
+} 
+
+.admin_name{ 
+    position: relative;
+    background-color: #CCD1FB;
+    width: fit-content;
+    padding: 15px;
+    margin-left: 100px;
+}
+
+.sidebar__menu{
+    position: relative;
+} 
+
+.menu__item{
+    position: relative;
+    display: flex;
+    width: 20vw;
+    padding: 10px;
+    margin: 20px;
+    background-color: rgba(173, 204, 252, 0.4); 
+    justify-content: center; 
+    cursor: pointer;
+}
+
+.menu__item > p{
+    font-size: 20px;
+    color: white;
+    margin-left: 10px;
+    font-weight: 600;
+}
+
+#menu__icon{
+    color: white;
+    font-size: 26px;
+}

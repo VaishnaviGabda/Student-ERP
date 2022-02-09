@@ -1,0 +1,45 @@
+.batches{
+    display: flex;
+}
+
+.batch__data__items{
+    display: flex;
+    justify-content:space-between;
+    background-color:#c0e0ff;
+    margin:24px;
+    padding: 10px;
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    width: 54vw;
+}
+
+.batches__main{
+    margin-top: 20px;
+    margin-left: 8%;
+}
+
+.btn{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 40%;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#details__btn{
+    background-color: #118E0E;
+}
+
+#edit__btn{
+    background-color: #f78c12;
+}
+
+.control__btns{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
