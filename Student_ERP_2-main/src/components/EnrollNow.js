@@ -45,7 +45,7 @@ function EnrollNow() {
     setbranch("")
     setCourse("")
 
-   alert("You are successfully Enrolled !")
+   alert("You are successfully Enrolled!")
     
 }
 else{
