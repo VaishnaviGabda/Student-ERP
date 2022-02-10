@@ -67,6 +67,14 @@ router.get('/get_courses',(req,res,next) =>{
     })
 })
 
+router.get('/get_enrolled_students:id',(req,res,next) =>{
+    Courses.find({_id: req.params.id})
+    .then(result =>{
+        res.send(result)
+        console.log(result);
+    })
+})
+
 const changeStatus = (student_id) =>{
     Enroll.findByIdAndUpdate({_id: student_id},
         { "$set": {status : true} }
@@ -77,16 +85,23 @@ const changeStatus = (student_id) =>{
 }
 
 const changeAvailableSeats = (available_seats, course_id, student_id) =>{
-    count = parseInt(available_seats)-1
-    console.log(count);
-    Courses.findByIdAndUpdate(
-        course_id, 
-        { "$set": { available_seats : count } ,
-        "$push": { "students": student_id }},
-    )
-    .then(result =>{
-        console.log(result)
-    })
+
+    if (available_seats != 0) {
+        count = parseInt(available_seats)-1
+        console.log(count);
+        Enroll.findById({_id: student_id})
+        .then(result => {
+            Courses.findByIdAndUpdate(
+               course_id, 
+               { "$set": { available_seats : count } ,
+               "$push": { "students": result.student_id }},
+            )
+            .then(result =>{
+               console.log(result)
+            })
+        })
+    }
+       
 }
 
 router.put('/update_seats',(req,res,next) =>{
@@ -94,9 +109,7 @@ router.put('/update_seats',(req,res,next) =>{
     .then(result =>{
 
         course_name = result.course_name
-
         changeStatus(req.body.student_id)
-
         changeAvailableSeats(result.available_seats, req.body.course_id, req.body.student_id)
 
         Enroll.findById({_id: req.body.student_id})

@@ -10,6 +10,13 @@ function Batches() {
 
   const [courses, setCourses] = useState([]);
 
+  const handleDetails = (id) =>{
+    axios.get(`http://localhost:9000/admin/get_enrolled_students${id}`)
+    .then(res => {
+      console.log(res.data[0].students);
+    })
+  }
+
   useEffect(() => {
     axios.get("http://localhost:9000/admin/get_courses")
     .then(res => {
@@ -29,7 +36,7 @@ function Batches() {
           <div>{course.available_seats} / {course.total_seats}</div>
 
           <div className="control__btns">
-          <div className="btn" id="details__btn">
+          <div className="btn" id="details__btn" onClick={e=> handleDetails(course._id)}>
             DETAILS
             <CgDetailsMore/>
           </div>
