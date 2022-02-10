@@ -22,3 +22,18 @@
     background-color: white;
 }
 
+.login{
+    background-color: white !important;
+    color: black !important;
+    text-decoration: none ;
+    font-weight: 900 !important;
+    font-size: 20px !important;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100px;
+    border-radius: 20px !important;
+    margin: 10px; 
+}
+
+.login:hover{
+    background-color: rgb(116, 241, 250) !important;
+}

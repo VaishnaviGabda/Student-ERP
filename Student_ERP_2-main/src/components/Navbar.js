@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navbar.css'
-import { Navbar, Container, Nav } from 'react-bootstrap';
+import { Navbar, Container, Nav, Button } from 'react-bootstrap';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Navbar1() {
@@ -21,6 +21,7 @@ function Navbar1() {
         <Nav.Link id='menus' href="#">Contact us</Nav.Link >
       </Nav>
     </Navbar.Collapse>
+    <Button className='login'>Log in</Button>
   </Container>
 </Navbar>
   </>;
