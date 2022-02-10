@@ -4,7 +4,7 @@ const Courses = require("../models/courses_model")
 const Enroll = require("../models/enrollment")
 const nodemailer = require("nodemailer")
 
-const sendMail = (student_email, student_name, course_name) => {
+const sendMail = (student_email, student_name, course_name , student_id) => {
 
     sender = nodemailer.createTransport({
         service: "gmail",
@@ -23,6 +23,7 @@ const sendMail = (student_email, student_name, course_name) => {
             <hr>
             <h3 style='text-align:center;'>
             Congratulations ${student_name}! You've successfully enrolled for ${course_name} course at LinkCode Technologies.</h3>
+            <h3><b>User ID:</b> ${student_id}</h3>
         `
     }
 
@@ -100,7 +101,7 @@ router.put('/update_seats',(req,res,next) =>{
 
         Enroll.findById({_id: req.body.student_id})
         .then(result => {
-           sendMail(result.email, result.full_name, course_name)
+           sendMail(result.email, result.full_name, course_name, result.student_id)
         })
     })
     

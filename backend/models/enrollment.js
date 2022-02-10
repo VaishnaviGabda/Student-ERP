@@ -22,6 +22,10 @@ const EnrollmentData = mongoose.Schema({
    "status":{
        type:Boolean,
        default: false
+   },
+   "student_id":{
+       type:String,
+       default:null
    }
    
 })
