@@ -3,9 +3,6 @@ const express = require('express')
 const router = express.Router()
 const Enroll = require("../models/enrollment")
 
-
-
-
 const createStudentId = (id) =>{
     
     str = JSON.stringify(id)
