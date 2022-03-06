@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Courses = require("../models/courses_model")
 const Enroll = require("../models/enrollment")
+const Login = require("../models/login_model")
 const nodemailer = require("nodemailer")
 
 const sendMail = (student_email, student_name, course_name , student_id) => {
@@ -10,7 +11,7 @@ const sendMail = (student_email, student_name, course_name , student_id) => {
         service: "gmail",
         auth: {
             user: "riddhipawar000@gmail.com",
-            pass: "9922278217"
+            pass: "19Riddhi@9922"
         }
     })
 
@@ -104,18 +105,68 @@ const changeAvailableSeats = (available_seats, course_id, student_id) =>{
        
 }
 
+const saveLoginData = (student_id, email) =>{
+    login = new Login({
+        student_id: student_id,
+        email: email
+    })
+    login.save()
+    .then(res =>{
+        console.log("Login data saved..");
+    })
+    .catch(res =>{
+        console.log("Something went wrong..");
+    })
+}
+
+router.get('/get_login_data',(req,res,next) =>{
+    Login.find()
+    .then(result =>{
+        res.send(result)
+        
+    })
+})
+
+router.get('/check_login_data',(req,res,next) =>{
+    Login.find({student_id: req.body.student_id})
+    .then(result =>{
+        res.send(result)
+    })
+    .catch(err =>{
+        res.send("Something went wrong")
+    })
+})
+
+router.put('/create_new_password',(req,res,next) =>{
+    Login.findOneAndUpdate({student_id: req.body.student_id},
+      {"$set":{password: req.body.password}}
+    )
+    .then(result =>{
+        res.send("password is created")
+    })
+    .catch(err =>{
+        res.send("Something went wrong")
+    })
+})
+
 router.put('/update_seats',(req,res,next) =>{
     Courses.findById(req.body.course_id)
     .then(result =>{
 
-        course_name = result.course_name
-        changeStatus(req.body.student_id)
-        changeAvailableSeats(result.available_seats, req.body.course_id, req.body.student_id)
+        if (result.available_seats > 0) {
+            course_name = result.course_name
+            changeStatus(req.body.student_id)
+            changeAvailableSeats(result.available_seats, req.body.course_id, req.body.student_id)
 
-        Enroll.findById({_id: req.body.student_id})
-        .then(result => {
-           sendMail(result.email, result.full_name, course_name, result.student_id)
-        })
+            Enroll.findById({_id: req.body.student_id})
+            .then(result => {
+               saveLoginData(result.student_id,result.email)
+               sendMail(result.email, result.full_name, course_name, result.student_id)
+            })
+        }
+        else{
+            res.send({"message":"Batch is not available!"})
+        }
     })
     
 })

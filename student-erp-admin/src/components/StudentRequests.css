@@ -14,7 +14,13 @@
     width: 54vw;
 }
 
+.req__main::-webkit-scrollbar {
+    display: none;
+}
+
 .req__main{
+    height: 84vh;
+    overflow: auto;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 8%;

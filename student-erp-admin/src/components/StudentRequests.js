@@ -26,8 +26,9 @@ function StudentRequests() {
   }, []);
 
   const handleAccept = (selected_course, student_id) =>{
+
     {courses.map(course => {
-      if (selected_course === course.course_name) {
+      if (selected_course === course.course_name && course.available_seats > 0) {
         axios.put("http://localhost:9000/admin/update_seats",
         {"course_id":course._id, "student_id":student_id}
         )
@@ -35,9 +36,6 @@ function StudentRequests() {
           console.log("updated");
         })
         alert(`Added to ${course.course_name} batch!`)
-      }
-      else{
-        console.log("Course is not available..");
       }
     })}
   }

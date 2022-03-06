@@ -1,0 +1,17 @@
+.login_page{
+    background-color: whitesmoke;
+    height: 100vh;
+}
+
+.login_page_content{
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 100px;
+}
+
+.login_page_content > input{
+    width: 100%;
+    margin: 10px;
+}

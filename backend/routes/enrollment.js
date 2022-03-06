@@ -17,7 +17,6 @@ const createStudentId = (id) =>{
 
 router.post('/enrollnow' ,(req,res,next)=>{
 
-  
      enroll = Enroll(req.body)
      enroll.save()
      .then(item => {
